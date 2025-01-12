@@ -67,7 +67,7 @@ int main() {
 	return 0;
 }
 
-Musteri_bilgi musteri; //******
+Musteri_bilgi musteri;
 
 void Musteri_ekleme() {
 	ofstream yaz("musteri.dat", ios::binary | ios::app);
@@ -113,7 +113,7 @@ void Musteri_listeleme() {
 	int adet = oku.tellg() / sizeof(musteri);
 	if (adet > 0) {
 		for (int i = 0;i < adet;i++) {
-			oku.seekg(i * sizeof(musteri)); // bu bölümü eklmeyi unuttuðum için hata aldým full
+			oku.seekg(i * sizeof(musteri)); 
 			oku.read((char*)&musteri, sizeof(musteri));
 			cout << i + 1 << " . Musteri bilgileri" << endl << endl;
 			cout << "musteri ad: " << musteri.ad << endl;
@@ -129,7 +129,7 @@ void Musteri_listeleme() {
 
 	}
 	else {
-		cout << "Kayit BULUNAMADÝ" << endl;
+		cout << "Kayit BULUNAMADÃ" << endl;
 	}
 }
 
@@ -208,7 +208,7 @@ void Musteri_silme() {
 			rename("Yedek.dat", "musteri.dat");
 		}
 		else {
-			cout << "Dosya açýlmadý!" << endl;
+			cout << "Dosya aÃ§Ã½lmadÃ½!" << endl;
 		}
 	}
 
